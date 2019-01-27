@@ -1,5 +1,24 @@
 <% include ./partials/header %>
 
+    <h1>More Information on <%= cat.name %></h1>
 
+    <div>
+      <div class='show'>
+        <label>Name</label><br>
+        <%= cat.name %>
+      </div>
+      <div class='show'>
+        <label>Age</label><br>
+        <%= cat.age %>
+      </div>
+      <div class='show'>
+        <label>Breed</label><br>
+        <%= cat.breed %>
+      </div>
+      <div class='show'>
+        <label>Description</label><br>
+        <%- cat.description %>
+      </div>
+    </div>
 
 <% include ./partials/footer %>

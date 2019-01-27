@@ -48,6 +48,20 @@ app.post('/index', (req, res) => {
   });
 });
 
+// Show Route
+
+app.get('/index/:id', (req, res) => {
+  Cat.findById(req.params.id)
+     .exec((err, cat) => {
+      if(err) {
+        const route = "Error in show route";
+        res.render('error', { route: route, err: err });
+      } else {
+        res.render(`show`, { cat: cat });
+      }
+     });
+});
+
 app.listen(PORT, () => console.log(`
 
   Server listening on port ${PORT}, mapped locally to port ${PORT}.
