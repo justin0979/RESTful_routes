@@ -2,6 +2,8 @@
 
     <h1>More Information on <%= cat.name %></h1>
 
+    <a href='/index/<%= cat._id %>/edit'>Make Changes</a>
+
     <div>
       <div class='show'>
         <label>Name</label><br>
@@ -18,6 +20,11 @@
       <div class='show'>
         <label>Description</label><br>
         <%- cat.description %>
+      </div>
+      <div>
+        <form action='/index/<%= cat._id %>?_method=DELETE' method='POST'>
+          <button>DELETE</button>
+        </form>
       </div>
     </div>
 
