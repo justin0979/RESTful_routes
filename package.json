@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "ejs": "*",
+    "method-override": "*",
+    "express-sanitizer": "*",
+    "mongoose": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
