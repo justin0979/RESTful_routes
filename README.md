@@ -3,6 +3,7 @@ The application is run with the help and convenience of docker-compose.
 
 
 --NOTE--
+
 Sometimes at run time, I'll get network errors with Mongo.
 I'm not sure if it is caused by Mongo starting up after the server application starts up, 
 resulting in "mongo.connect()" not being able to find a running instance of Mongo.
