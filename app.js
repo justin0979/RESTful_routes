@@ -62,6 +62,46 @@ app.get('/index/:id', (req, res) => {
      });
 });
 
+// Edit Route
+app.get('/index/:id/edit', (req, res) => {
+  Cat.findById(req.params.id)
+     .exec((err, editCat) => {
+      if(err) {
+        const route = "Error in edit route"
+        res.render('error', { route: route, err: err });
+      } else {
+        res.render('edit', { cat: editCat });
+      }
+     });
+});
+
+// Update Route
+app.put('/index/:id', (req, res) => {
+  req.body.cat.description = req.sanitize(req.body.cat.description);
+
+  Cat.findByIdAndUpdate(req.params.id, req.body.cat)
+     .exec((err, updatedCat) => {
+      if(err) {
+        const route = 'Error while updating';
+        res.render('error', { route: route, err: err });
+      } else {
+        res.redirect(`/index/${req.params.id}`);
+      }
+     });
+});
+
+app.delete("/index/:id", (req, res) => {
+  Cat.findByIdAndDelete(req.params.id)
+     .exec((err, deletedCat) => {
+      if(err) {
+        const route = "Error while deleting";
+        res.render('error', { route: route, err: err });
+      } else {
+        res.redirect('/index');
+      }
+     });
+});
+
 app.listen(PORT, () => console.log(`
 
   Server listening on port ${PORT}, mapped locally to port ${PORT}.

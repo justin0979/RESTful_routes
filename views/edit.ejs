@@ -1,5 +1,31 @@
 <% include ./partials/header %>
 
+    <h1>Make Changes to <%= cat.name %></h1>
+    
+    <a href='/index/<%= cat._id %>'>Go Back to More Info</a>
 
+    <div>
+      <form action="/index/<%= cat._id %>?_method=PUT" method="POST">
+        <div>
+          <label>Name:</label><br>
+          <input type='text' name='cat[name]' value='<%= cat.name %>' />
+        </div>
+        <div>
+          <label>Age:</label><br>
+          <input type='text' name='cat[age]' value='<%= cat.age %>' />
+        </div>
+        <div>
+          <label>Breed:</label><br>
+          <input type='text' name='cat[breed]' value='<%= cat.breed %>' />
+        </div>
+        <div>
+          <label>Description:</label><br>
+          <textarea name='cat[description]'><%- cat.description %></textarea>
+        </div>
+        <div>
+          <input type='submit' />
+        </div>
+      </form>
+    </div>
 
 <% include ./partials/footer %>
