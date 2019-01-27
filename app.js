@@ -16,6 +16,9 @@ app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => res.redirect('/index'));
+/* ==================================================
+   Seven REpresentational State Tranfer Routes follow
+   ================================================== */
 
 // Index Route
 app.get('/index', (req, res) => {
@@ -90,6 +93,7 @@ app.put('/index/:id', (req, res) => {
      });
 });
 
+// Delete Route
 app.delete("/index/:id", (req, res) => {
   Cat.findByIdAndDelete(req.params.id)
      .exec((err, deletedCat) => {
