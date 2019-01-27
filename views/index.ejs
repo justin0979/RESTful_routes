@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+
+    <h1>Your List Of Cats</h1>
+
+    <a href='/index/new'>Add Cat</a>
+
+    <ul>
+      <% cats.forEach(cat => { %>
+        <li>
+          <div>
+            <label>Name:</label><br>
+            <%= cat.name %>
+          </div>
+          <div>
+            <label>Breed:</label>br
+            <%= cat.breed %>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+
+<% include ./partials/footer %>
