@@ -4,7 +4,7 @@
 
     <a href='/index/new'>Add Cat</a>
 
-    <ul>
+    <ol>
       <% cats.forEach(cat => { %>
         <li>
           <div>
@@ -12,11 +12,11 @@
             <%= cat.name %>
           </div>
           <div>
-            <label>Breed:</label>br
+            <label>Breed:</label><br>
             <%= cat.breed %>
           </div>
         </li>
       <% }); %>
-    </ul>
+    </ol>
 
 <% include ./partials/footer %>

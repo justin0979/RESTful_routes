@@ -1,5 +1,27 @@
 <% include ./partials/header %>
 
+    <h1>Add Your New Cat</h1>
 
+    <div>
+      <form action='/index' method='POST'>
+        <div>
+          <label>Name:</label><br>
+          <input type='text' name='cat[name]' placeholder='name' />
+        </div>
+        <div>
+          <label>Age:</label><br>
+          <input type='text' name='cat[age]' placeholder='age' />
+        </div>
+        <div>
+          <label>Breed:</label><br>
+          <input type='text' name='cat[breed]' placeholder='breed' />
+        </div>
+        <div>
+          <label>Description:</label><br>
+          <textarea name='cat[description]'></textarea>
+        </div>
+        <button>Add</button>
+      </form>
+    </div>
 
 <% include ./partials/footer %>

@@ -31,6 +31,23 @@ app.get('/index', (req, res) => {
      });
 });
 
+// New Route
+app.get('/index/new', (req, res) => res.render('new'));
+
+// Create Route
+app.post('/index', (req, res) => {
+  req.body.cat.description = req.sanitize(req.body.cat.description);
+
+  Cat.create(req.body.cat, (err, cat) => {
+    if(err) {
+      const route = 'Error in creation route';
+      res.render('error', { route: route, err: err });
+    } else {
+      res.redirect('/index');
+    }
+  });
+});
+
 app.listen(PORT, () => console.log(`
 
   Server listening on port ${PORT}, mapped locally to port ${PORT}.
