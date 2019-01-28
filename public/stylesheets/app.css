@@ -3,6 +3,14 @@ body {
   text-align: center;
 }
 
+button {
+  cursor: pointer;
+  height: 60px;
+  width: 80px;
+  border-radius: 10%;
+  background-color: cyan;
+}
+
 label {
   margin-right: 5px;
 }
@@ -22,6 +30,12 @@ li {
   margin-right: 40%;
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+span {
+  font-weight: 600;
+  font-size: 32px;
+  color: purple;
 }
 
 .show {
