@@ -7,19 +7,19 @@
     <div>
       <div class='show'>
         <label>Name</label><br>
-        <%= cat.name %>
+        <span><%= cat.name %></span>
       </div>
       <div class='show'>
         <label>Age</label><br>
-        <%= cat.age %>
+        <span><%= cat.age %></span>
       </div>
       <div class='show'>
         <label>Breed</label><br>
-        <%= cat.breed %>
+        <span><%= cat.breed %></span>
       </div>
       <div class='show'>
         <label>Description</label><br>
-        <%- cat.description %>
+        <span><%- cat.description %></span>
       </div>
       <div>
         <form action='/index/<%= cat._id %>?_method=DELETE' method='POST'>
