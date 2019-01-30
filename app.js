@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.redirect('/index'));
 /* ==================================================
    Seven REpresentational State Tranfer Routes follow
    ================================================== */
-
+/*
 // Index Route
 app.get('/index', (req, res) => {
   Cat.find({})
@@ -32,6 +32,12 @@ app.get('/index', (req, res) => {
         res.render('index', { cats: foundCat });
       }
      });
+});
+*/
+app.get('/index', (req, res) => {
+  Cat.find({})
+  .then(foundCat => res.render('index', {cats: foundCat}))
+  .catch(err => res.render('error', { route: "Error in index", err: err }))
 });
 
 // New Route
