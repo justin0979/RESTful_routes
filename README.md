@@ -10,6 +10,7 @@ Originally, I had an issue with Mongo starting up after my application and consi
 I recently found out about 
 
 `depends_on:`
+
 ` - mongo`
 
 
